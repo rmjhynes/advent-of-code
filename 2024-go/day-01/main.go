@@ -34,6 +34,8 @@ func main() {
 		right_slice = append(right_slice, i)
 	}
 
+	// # Part 1 --------------------------------------------------------------------------------- #
+
 	// Sort each slice from smallest int to largest int
 	slices.Sort(left_slice)
 	slices.Sort(right_slice)
@@ -56,4 +58,19 @@ func main() {
 	}
 
 	fmt.Println(total_distance)
+
+	// # Part 2 --------------------------------------------------------------------------------- #
+
+	// Find how often each number from the left slice appears in the right slice to get the similarity score
+	similarity_score := 0
+	for li := range left_slice {
+		count := 0
+		for ri := range right_slice {
+			if left_slice[li] == right_slice[ri] {
+				count += 1
+			}
+		}
+		similarity_score += (left_slice[li] * count)
+	}
+	fmt.Println(similarity_score)
 }
