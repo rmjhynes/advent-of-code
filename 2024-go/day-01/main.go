@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"slices"
 	"strconv"
 	"strings"
 )
@@ -33,7 +34,10 @@ func main() {
 		right_slice = append(right_slice, i)
 	}
 
-	fmt.Println(left_slice[1])
+	// Sort each slice from smallest int to largest int
+	slices.Sort(left_slice)
+	fmt.Println(left_slice)
 
-	fmt.Println(right_slice[1])
+	slices.Sort(right_slice)
+	fmt.Println(right_slice)
 }
