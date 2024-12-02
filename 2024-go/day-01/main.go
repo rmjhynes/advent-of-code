@@ -36,8 +36,17 @@ func main() {
 
 	// Sort each slice from smallest int to largest int
 	slices.Sort(left_slice)
-	fmt.Println(left_slice)
-
 	slices.Sort(right_slice)
-	fmt.Println(right_slice)
+
+	// Find the distances between numbers in each slice
+	distances := []int{}
+
+	for i := range left_slice {
+		if left_slice[i] >= right_slice[i] {
+			distances = append(distances, (left_slice[i] - right_slice[i]))
+		} else {
+			distances = append(distances, (right_slice[i] - left_slice[i]))
+		}
+	}
+	fmt.Println(distances)
 }
