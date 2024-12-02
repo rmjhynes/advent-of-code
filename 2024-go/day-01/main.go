@@ -26,7 +26,7 @@ func main() {
 		// Split the line into columns
 		columns := strings.Fields(scanner.Text())
 
-		// Convert column string to int and append to right and left slices
+		// Convert column strings to int and append to right and left slices
 		i, _ := strconv.Atoi(columns[0])
 		left_slice = append(left_slice, i)
 
@@ -38,7 +38,7 @@ func main() {
 	slices.Sort(left_slice)
 	slices.Sort(right_slice)
 
-	// Find the distances between numbers in each slice
+	// Find the distances between numbers in each slice at each index
 	distances := []int{}
 
 	for i := range left_slice {
