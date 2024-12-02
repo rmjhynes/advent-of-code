@@ -57,7 +57,7 @@ func main() {
 		total_distance += v
 	}
 
-	fmt.Println(total_distance)
+	fmt.Println("Total distance between left and right lists: ", total_distance)
 
 	// # Part 2 --------------------------------------------------------------------------------- #
 
@@ -72,5 +72,5 @@ func main() {
 		}
 		similarity_score += (left_slice[li] * count)
 	}
-	fmt.Println(similarity_score)
+	fmt.Println("Similarity score: ", similarity_score)
 }
