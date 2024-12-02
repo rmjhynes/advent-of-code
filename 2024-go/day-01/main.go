@@ -48,5 +48,12 @@ func main() {
 			distances = append(distances, (right_slice[i] - left_slice[i]))
 		}
 	}
-	fmt.Println(distances)
+
+	// Find total distance by getting the sum of values in distances slice
+	total_distance := 0
+	for _, v := range distances {
+		total_distance += v
+	}
+
+	fmt.Println(total_distance)
 }
