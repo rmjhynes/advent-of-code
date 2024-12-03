@@ -58,6 +58,10 @@ func main() {
 				safe_reports += 1
 			}
 		}
+
+		// # Part 2 --------------------------------------------------------------------------------- #
+		// Not enough brain capacity for part 2 :(
+
 	}
 	fmt.Println("Safe reports: ", safe_reports)
 }
