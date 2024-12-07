@@ -14,6 +14,8 @@ func main() {
 		fmt.Println(err)
 	}
 
+	defer input.Close()
+
 	// Create a scanner to read the file
 	scanner := bufio.NewScanner(input)
 
