@@ -5,3 +5,4 @@
 - Day 4: 2 stars
 - Day 5: 0 stars - Not worth the time commitment to try to work it out.
 - Day 6: 1 star - Don't even know where I'd start for part 2.
+- Day 7: 0 stars - Spent 40 mins thinking about how to approach it and couldn't get my head round it, even after consulting Claude.
