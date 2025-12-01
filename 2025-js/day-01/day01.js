@@ -1,10 +1,7 @@
-function part_1() {
+function part_1(input_data) {
   
-  const fs = require('node:fs');
-  const data = fs.readFileSync("input.txt", "utf8");
-
   // Split into lines (drops the trailing newline)
-  const rotations = data.trim().split("\n");
+  const rotations = input_data.trim().split("\n");
 
   let pointer = 50;
 
@@ -60,5 +57,7 @@ function check_zero(pointer) {
   }
 }
 
-let total = 0
-part_1();
+const fs = require('node:fs');
+const input_data = fs.readFileSync("input.txt", "utf8");
+let total = 0;
+part_1(input_data);
