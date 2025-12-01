@@ -65,9 +65,6 @@ function part_2(input_data) {
   // Split into lines (drops the trailing newline)
   const rotations = input_data.trim().split("\n");
 
-  // rotations = ["L2", "R7", "L55", "R3", "L15", "R12", "R67", "R40", "L700"]
-  // rotations = ["L50", "R20", "R310", "L230", "L300", "R1", "L1", "R399", "R101", "L201"]
-
   // Dial starts by pointing at 50
   let pointer = 50;
 
@@ -132,7 +129,6 @@ function part_2(input_data) {
         pointer += points;
       }
     }
-    // check_zero(pointer);
     console.log("Pointer now at: ", pointer);
     console.log("Occurrences of dial pointing at zero so far: ", total);
   }
