@@ -24,12 +24,14 @@ function part_1(input_data) {
     console.log("Points: ", points);
 
     if (direction.trim() === "L"){
+      // If pointer moves past 0 anti-clockwise
       if (pointer - points < 0) {
         pointer = 100 - (points - pointer);
       } else {
         pointer -= points;
       }
     } else if (direction.trim() === "R"){
+      // If pointer moves past 99 clockwise
       if (pointer + points > 99) {
         let points_to_end;
 
