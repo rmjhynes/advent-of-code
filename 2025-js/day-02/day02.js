@@ -4,7 +4,7 @@ const { read_input } = require("../utils");
 function part_1() {
   const data = read_input();
   console.log(data);
-  line = data[0];
+  let line = data[0];
 
   let total_invalid_ids = 0;
   
