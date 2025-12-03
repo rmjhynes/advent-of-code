@@ -1,6 +1,7 @@
 const { read_input } = require("../utils");
 
-function part_1() {
+// Brute force method
+function part_1a() {
   const lines = read_input();
 
   let total_joltage = 0;
@@ -49,7 +50,7 @@ function part_1() {
     }
 
     // Concatenate largest digits from first and second pass and add to total
-    line_voltage = fp_largest_digit_value.concat(sp_largest_digit_value);
+    let line_voltage = fp_largest_digit_value.concat(sp_largest_digit_value);
     console.log("Line voltage to add to the total: ", line_voltage);
     total_joltage += Number(line_voltage);
     console.log("Total joltage so far: ", total_joltage);
@@ -57,4 +58,39 @@ function part_1() {
   console.log("Total joltage: ", total_joltage);
 }
 
-part_1();
+// Thought of a more efficient way to solve it so did part 1 again
+function part_1b() {
+  const lines = read_input();
+
+  let total_joltage = 0;
+
+  // Iterate over battery lines
+  for (let line = 0; line < lines.length; line++) {
+   
+    // Add each digit to array so we can iterate over them
+    let fp_line_array = [];
+    let sp_line_array = [];
+    for (let digit of lines[line]) fp_line_array.push(digit) && sp_line_array.push(digit);
+
+    // Ignore last digit for first pass as this can nenver be the largest first digit
+    fp_line_array.splice(-1, 1);
+
+    // Find highest digit in first pass array
+    let fp_largest_digit_index = fp_line_array.reduce((maxIndex, elem, i, fp_line_array) => elem > fp_line_array[maxIndex] ? i : maxIndex, 0);
+   
+    // Remove digits up to and including the highest from the first pass
+    // We will focus on these digits after this in the second pass
+    sp_line_array.splice(0, (fp_largest_digit_index + 1));
+
+    // Find highest digit in second pass array
+    let sp_largest_digit_index = sp_line_array.reduce((maxIndex, elem, i, sp_line_array) => elem > sp_line_array[maxIndex] ? i : maxIndex, 0);
+
+    // Concatenate largest digits from first and second pass and add to total
+    let line_voltage = fp_line_array[fp_largest_digit_index].concat(sp_line_array[sp_largest_digit_index]);
+    total_joltage += Number(line_voltage);
+  }
+  console.log("Total joltage: ", total_joltage);
+}
+
+part_1a();
+part_1b();
