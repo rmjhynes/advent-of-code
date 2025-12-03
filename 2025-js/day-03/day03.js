@@ -92,5 +92,38 @@ function part_1b() {
   console.log("Total joltage: ", total_joltage);
 }
 
+function part_2() {
+  
+  const lines = read_input();
+ 
+  let total_joltage = 0;
+
+  // Iterate over battery lines
+  for (let line = 0; line < lines.length; line++) {
+
+    // Add each digit to array so we can iterate over them
+    let line_array = [];
+    for (let digit of lines[line]) line_array.push(digit);
+    console.log("Line array: ", line_array);
+    
+    let largest_voltage_array = [];
+
+    for (let p = line_array.length - 1; p > 0; p--) {
+    
+      for (let i = p; i >= (p - 12); i--) {
+        largest_voltage_array.unshift(line_array[i]);
+        console.log("line_array[i]: ", line_array[i]);
+
+        if (line_array[i - 1] > largest_voltage_array[0]){
+          largest_voltage_array[0] = line_array[i - 1]
+          console.log("largest_voltage_array index 0 replaced with:", line_array[i - 1]);
+        }
+      }
+      console.log("largest_voltage_array: ", largest_voltage_array);
+    }
+  }
+}
+
 part_1a();
 part_1b();
+// part_2();
