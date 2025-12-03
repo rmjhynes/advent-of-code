@@ -1,4 +1,3 @@
-// Define path to helper functions file
 const { read_input } = require("../utils");
 
 function part_1() {
@@ -6,7 +5,7 @@ function part_1() {
 
   let total_joltage = 0;
 
-  // Iterate over battery lines (lines)
+  // Iterate over battery lines
   for (let line = 0; line < lines.length; line++) {
    
     // Add each digit to array so we can iterate over them
@@ -19,7 +18,7 @@ function part_1() {
     console.log("FP largest digit value (index 0): ", fp_largest_digit_value);
     let fp_largest_digit_index = 0;
 
-    // Find the highest digit in each line (line) of batteries on first passV
+    // Find the highest digit in each line (line) of batteries on first pass
     // Ignore last digit on first pass as this cannot be the first digit of
     // largest poissible voltage
     for (let i = 0; i < (line_array.length - 1); i++) {
