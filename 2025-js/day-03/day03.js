@@ -50,7 +50,7 @@ function part_1() {
 
     // Concatenate largest digits from first and second pass and add to total
     line_voltage = fp_largest_digit_value.concat(sp_largest_digit_value);
-    console.log("Line voltage to add to the toal: ", line_voltage);
+    console.log("Line voltage to add to the total: ", line_voltage);
     total_joltage += Number(line_voltage);
     console.log("Total joltage so far: ", total_joltage);
   }
