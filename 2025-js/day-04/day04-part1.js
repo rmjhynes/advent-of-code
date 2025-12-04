@@ -30,27 +30,27 @@ function findNextGen(mat) {
   // Iterate over the matrix
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < n; j++) {
-      let live = 0;
+      let rolls = 0;
 
       // Count the number of adjacent rolls
       for (let [dx, dy] of directions) {
         let x = i + dx, y = j + dy;
 
-        // check if the neighbor is a roll
+        // Check if the neighbor is a roll
         if (x >= 0 && x < m && y >= 0 && y < n && (mat[x][y] === '@')) {
-          live++;
+          rolls++;
         }
       }
 
       // If current cell is a roll and number of adjacent rolls is less than 4
       // then the cell will be marked with an 'x'
-      if (mat[i][j] === '@' && live < 4) {
-          nextGen[i][j] = 'x';
+      if (mat[i][j] === '@' && rolls < 4) {
+        nextGen[i][j] = 'x';
       }
 
       // Else the state of cells will remain same
       else {
-          nextGen[i][j] = mat[i][j];
+        nextGen[i][j] = mat[i][j];
       }
     }
   }
