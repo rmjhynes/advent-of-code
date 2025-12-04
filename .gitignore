@@ -1,1 +1,4 @@
 *.DS_Store
+
+# Legal notice asks to not share puzzle inputs
+*input.txt
