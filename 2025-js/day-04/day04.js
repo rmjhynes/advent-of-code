@@ -19,7 +19,7 @@ function build_matrix() {
 function findNextGen(mat) {
   let m = mat.length, n = mat[0].length;
 
-  // create matrix to store cells of next generation.
+  // Create matrix to store cells of next generation.
   let nextGen = Array.from({length : m}, () => Array(n).fill(0));
   // Directions of eight possible neighbors
   let directions = [
@@ -32,31 +32,23 @@ function findNextGen(mat) {
     for (let j = 0; j < n; j++) {
       let live = 0;
 
-      // Count the number of live neighbors
+      // Count the number of adjacent rolls
       for (let [dx, dy] of directions) {
         let x = i + dx, y = j + dy;
 
-        // check if the neighbor is live
+        // check if the neighbor is a roll
         if (x >= 0 && x < m && y >= 0 && y < n && (mat[x][y] === '@')) {
           live++;
         }
       }
 
-      // If current cell is live and number of live
-      // neighbors is less than 4 then the cell will be marked with an 'x'
+      // If current cell is a roll and number of adjacent rolls is less than 4
+      // then the cell will be marked with an 'x'
       if (mat[i][j] === '@' && live < 4) {
           nextGen[i][j] = 'x';
       }
 
-      // If current cell is dead and number of live
-      // neighbors is equal to 3, then the cell will
-      // become live
-      // else if (mat[i][j] === 0 && live === 3) {
-      //     nextGen[i][j] = 1;
-      // }
-
-      // else the state of cells
-      // will remain same.
+      // Else the state of cells will remain same
       else {
           nextGen[i][j] = mat[i][j];
       }
