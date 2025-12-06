@@ -30,7 +30,7 @@ function part_1() {
       let lb = Number(ranges[j].substring(0, dash_index));
       let ub = Number(ranges[j].substring(dash_index + 1));
       
-      // Iterate over the extracted range
+      // Check ID falls within extracted range
       if (id >= lb && id <= ub) {
         count++;
         break;
