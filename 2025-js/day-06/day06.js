@@ -12,8 +12,6 @@ function part_1() {
     elements_array.push(lines[line].trim().split(/\s+/));
   }
 
-  console.log("elements_array", elements_array);
-
   // Iterate over horizontal lines
   for (let i = 0; i < elements_array[0].length; i++) {
     // Identify the operator for the vertical line
@@ -21,18 +19,16 @@ function part_1() {
 
     // Parse vertical elements and add to new array
     let vertical_items = elements_array.map(arr => arr[i]);
+
     // Remove the operator from the array
     vertical_items.splice(vertical_items.length - 1, 1);
-    console.log(vertical_items);
 
     if (operator === "+") {
       let sum = 0;
       vertical_items.map(Number).map(e => sum += e);
-      console.log(sum);
       total += sum;
     } else if (operator === "*") {
       const product = vertical_items.reduce((accumulator, current_value) => accumulator * current_value, 1);
-      console.log(product);
       total += product;
     }
   }
