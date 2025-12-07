@@ -20,12 +20,10 @@ function part_1() {
 
   // Put first beam in array under 'S'
   matrix[1][start_index] = "|";
-  console.log(matrix[1]);
   
   let splitter_count = 0;
   // Iterate over lines
   for (let i = 1; i < matrix.length; i++) {
-    console.log("We're on line: ", i);
     // Iterate over characters
     for (let j = 0; j < matrix[i].length; j++) {
       // Continue the beam downwards
@@ -40,7 +38,6 @@ function part_1() {
       }
     }
   }
-  console.log(matrix);
   console.log("Splitter count: ", splitter_count);
 }
 
